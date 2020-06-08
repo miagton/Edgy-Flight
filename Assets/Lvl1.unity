@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.65080994, g: 0.666729, b: 0.7075472, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.05
@@ -128,25 +128,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 873226216, guid: 47f046a4fcf811c46813de23f085ced0, type: 3}
+      propertyPath: speed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 298243120296684352, guid: 47f046a4fcf811c46813de23f085ced0,
         type: 3}
       propertyPath: m_Name
       value: RocketShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 2131713978932055371, guid: 47f046a4fcf811c46813de23f085ced0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609664866196725497, guid: 47f046a4fcf811c46813de23f085ced0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 2983898200783165471, guid: 47f046a4fcf811c46813de23f085ced0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 3078803809683381830, guid: 47f046a4fcf811c46813de23f085ced0,
         type: 3}
@@ -156,7 +145,7 @@ PrefabInstance:
     - target: {fileID: 3078803809683381830, guid: 47f046a4fcf811c46813de23f085ced0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.61
+      value: 2.44
       objectReference: {fileID: 0}
     - target: {fileID: 3078803809683381830, guid: 47f046a4fcf811c46813de23f085ced0,
         type: 3}
@@ -203,30 +192,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3492450019569022133, guid: 47f046a4fcf811c46813de23f085ced0,
+    - target: {fileID: 4852846049152090704, guid: 47f046a4fcf811c46813de23f085ced0,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.1400001
+      propertyPath: m_Pitch
+      value: 0.85
       objectReference: {fileID: 0}
-    - target: {fileID: 4082890347881361804, guid: 47f046a4fcf811c46813de23f085ced0,
+    - target: {fileID: 4852846049152090704, guid: 47f046a4fcf811c46813de23f085ced0,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5327214609735220825, guid: 47f046a4fcf811c46813de23f085ced0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.24999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 7446288702426715675, guid: 47f046a4fcf811c46813de23f085ced0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8279344353084928736, guid: 47f046a4fcf811c46813de23f085ced0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.47999987
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47f046a4fcf811c46813de23f085ced0, type: 3}
