@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    [SerializeField] float speed = 28f;
+    [SerializeField] float moveThrust = 100f;
+    [SerializeField] float rotationThrust=100f;
 
     AudioSource audioSource;
     Rigidbody rigidBody;
@@ -17,36 +18,66 @@ public class Rocket : MonoBehaviour
     
     void Update()
     {
-        CheckInput();
+        ThrustInput();
+        Rotate();
+        
     }
 
-    private void CheckInput()
+    
+
+    
+
+     void ThrustInput()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rigidBody.AddRelativeForce(Vector3.up * speed);
-            if (!audioSource.isPlaying)
-            {
-                audioSource.Play();
-
-            }
+            Thrust();
         }
-        else 
+        else
         {
             audioSource.Stop();
         }
-       // else audioSource.Stop();
-        
-        if (Input.GetAxis("Horizontal") != 0)
-        {
-            float input = Input.GetAxis("Horizontal");
-            ShipRotation(input);
-        }
-        
     }
 
-    void ShipRotation(float multiplier)
+    public void Thrust()
     {
-        transform.Rotate(-Vector3.forward*multiplier);
+        float thrustThisFrame = moveThrust * Time.deltaTime;
+        rigidBody.AddRelativeForce(Vector3.up * moveThrust);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+
+        }
     }
+
+    public void Rotate()
+    {
+        rigidBody.freezeRotation = true;//before we take manual control on rotation
+        float rotationThisFrame = rotationThrust * Time.deltaTime;
+      
+        if (Input.GetKey(KeyCode.A))
+        {
+            
+            transform.Rotate(Vector3.forward * rotationThisFrame);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(-Vector3.forward * rotationThisFrame);
+        }
+        rigidBody.freezeRotation = false;//enabling physics after input
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Friendly":
+                print("Its our friend!");
+                break;
+            default:
+                print("Ur dead!");
+                break;
+        }
+    }
+
 }
