@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8109603989413340375}
   m_Layer: 0
   m_Name: Laucn Zone
-  m_TagString: Untagged
+  m_TagString: Friendly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ece3c24d953f1bb4993793e6f6ebc1cc, type: 2}
+  - {fileID: 2100000, guid: e1d3b853e15a6fd4ebf1d754605cd66c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
