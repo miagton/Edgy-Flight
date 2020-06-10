@@ -7,20 +7,32 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     [SerializeField] Vector3 movingVector = new Vector3(5f, 5f, 5f);
+    [SerializeField] bool isRotating = false;
 
     //todo remove from inspector l8er
     float moveFactor;//0 not moved,1 fully moved
     [SerializeField] float period = 2f;
+    [SerializeField] float rotationSpeed = 0.3f;
 
     Vector3 startingPosition;
     void Start()
     {
-        startingPosition = transform.position;
+        
+            startingPosition = transform.position;
     }
 
     void Update()
     {
+        ApplyRotation();
         MovingCicle();
+    }
+
+    private void ApplyRotation()
+    {
+        if (isRotating)
+        {
+            transform.Rotate(0, 0, rotationSpeed);
+        }
     }
 
     private void MovingCicle()
